@@ -1,3 +1,4 @@
+### factorial 
 ```
 const factorial = (n) => {
     const calculateFactorial = (x) => {
@@ -10,15 +11,13 @@ const factorial = (n) => {
     return calculateFactorial(n);
 };
 ```
-
-
-Nesting the recursive function within the factorial function in this example provides several advantages:
-
 Encapsulation: By nesting the recursive function within factorial, you encapsulate the implementation details of calculating the factorial within the scope of the factorial function. This makes the code more modular and easier to understand, as users of the factorial function don't need to be concerned with the recursive logic used to calculate the factorial.
+
 Scope Isolation: The nested function calculateFactorial is only accessible within the scope of the factorial function. This prevents potential naming conflicts with other functions or variables in the global scope or outer scope. It also ensures that the calculateFactorial function is only used for the purpose of calculating factorials within the context of the factorial function.
+
 Readability: Nesting the recursive function within factorial can improve readability by making it clear that the purpose of the nested function is to calculate factorials. It also reduces clutter in the global scope by limiting the visibility of the calculateFactorial function.
+
 Closure: The nested function calculateFactorial has access to variables in the outer scope, such as the parameter n of the factorial function. This allows the recursive function to access and utilize these variables without needing to pass them explicitly as arguments, which can simplify the function signature and usage.
-Overall, nesting the recursive function within the factorial function provides a cleaner and more organized approach to implementing the factorial calculation, offering benefits in terms of encapsulation, scope isolation, readability, and closure.
 
 So, when you call factorial(5), for example, there will be one stack frame on the outer call stack for the factorial function and five stack frames on the inner call stack for the calculateFactorial function (one for each recursive call).
 
@@ -26,6 +25,7 @@ Each stack operates independently, managing the execution context for its respec
 
 Whether you nest the recursive function within another function or not, the number of recursive calls and the time complexity for calculating the factorial remains unchanged. The nesting primarily affects readability, encapsulation, and scope isolation, but it doesn't affect the fundamental time complexity of the algorithm.
 --------------------------------------------------
+### fibonacci
 ```
 const fib = (n)=>{
     let [a,b]=[0,1];
@@ -57,6 +57,7 @@ function fibonacci(n){
 console.log(fib(5), fibonacci(5))
 ```
 --------------------------------------------------
+### palindrome 
 ```
 const palindrrome = (str) => {
     let reversed = '';
@@ -69,6 +70,7 @@ const palindrrome = (str) => {
 console.log(pal('anastasia'), palindrrome('ana'))
 ```
 ----------------------------------------------------
+### counter
 The counter function returns the counting function without executing it.
 When counter is called, it initializes count to 0 and returns the counting function, which captures the count variable in its closure.
 Each time the returned counting function is called, it increments the count variable and returns the updated count. The state of count is preserved between function calls due to closure.
